@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>ElMotaheda Pharmacy</title>
+</head>
+<body>
+  
+  <div class="head">
+    <img src="imgs/logo-2.jpg" alt="Logo">
+    <div class="admin">
+      <a>Admin</a>
+    </div>
+  </div>
+  <h2 style="text-align: center; color: #000; margin-top: 16px; font-size: 36px;">Apply as employee</h2>
+
+    <form action="/action_page.php" method="GET">
+        <div class="container">
+      
+         <div class="row">
+             <div class="column">
+              <div class="input-field">
+                <input type="text" id="name" required />
+                <label for="name">Your name:</label>
+              </div>
+             </div>
+             <div class="column">
+              <div class="input-field">
+                <input type="email" id="email" required />
+                <label for="email">Your email:</label>
+              </div>
+             </div>
+         </div>
+
+         <!-- <div class="row">
+             <div class="column">
+               <div class="input-field">
+                <label class="date-label" for="dateofbirth">Date Of Birth</label>
+                <input class="date-input" type="date" name="dateofbirth" id="dateofbirth">
+               </div>
+             </div>
+             <div class="column">
+              <div class="input-field">
+                <input type="tel" id="phone" name="phone" 
+                placeholder="012-711-201-06" pattern="01-[0-9]{1}-[0-9]{3}-[0-9]{3}-[0-9]{2}" required>
+                <label for="phone">Enter a phone number:</label>
+              </div>
+            </div>
+         </div>
+
+         <div class="row">
+          <div class="column">
+            <div class="input-field">
+              <div class="custom-select">
+                <select id="jobs">
+                  <option value="firts">Choose your job</option>
+                  <option value="chemist">Chemist</option>
+                  <option value="warehouse-manager">Warehouse Manager</option>
+                  <option value="purchases-manager">Purchases & Sales Manager</option>
+                  <option value="contracting-officer">Contracting officer</option>
+                  <option value="call-center-service-director">Call Center Service Director</option>
+                  <option value="beauty expert">Beauty expret</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="column">
+           <div class="input-field">
+              <input type="text" id="work-experience" required />
+              <label for="work-experience">Your work experience:</label>
+           </div>
+         </div>
+      </div>
+
+      <div class="row">
+        <div class="column">
+          <div class="input-field">
+            <input type="text" id="faculty" required />
+            <label for="faculty">Faculty:</label>
+          </div>
+        </div>
+        <div class="column">
+         <div class="input-field">
+          <input type="text" id="grade" required />
+          <label for="grade">Grade:</label>
+         </div>
+       </div>
+    </div>
+
+    <div class="row">
+      <div class="column">
+        <div class="input-field">
+          <label class="date-label" for="graduation-year">Graduation year</label>
+          <input id="graduation-year" type="number" min="2010" max="2019" step="1" value="2016" />
+
+        </div>
+      </div>
+      <div class="column">
+       <div class="input-field">
+        <input type="number" id="salary" required />
+        <label for="salary">Expected salary:</label>
+       </div>
+     </div>
+  </div>
+
+  <div class="row">
+    <div class="column">
+      <div class="input-field">
+        <span> English level:</span>
+        <input type="range" value="0">
+        <div id="h4-container"><div id="h4-subcontainer"><h4>0<span></span></h4></div></div>
+
+      </div>
+    </div>
+    <div class="column">
+     <div class="input-field">
+      <span> Microsoft Office level:</span>    
+        <select name="office" id="office">
+          <option value="beginner">beginner</option>
+          <option value="intermediate" >intermediate</option>
+          <option value="advanced">advanced</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="column">
+      <div class="input-field">
+        <textarea id="work-places" name="work-places" placeholder="Write places you have workd in and why you left?"></textarea>
+      </div>
+      </div>
+      <div class="column">
+        <div class="input-field">
+          <div class="file-upload-wrapper" data-text="upload personal image!">
+            <input name="file-upload-field" type="file" class="file-upload-field" value="">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="column">
+        <div class="input-field">
+          <input type="text" id="city" />
+          <label for="city">Your city:</label>
+        </div>
+      </div>
+      <div class="column">
+        <div class="input-field">
+          <input type="text" id="address" />
+          <label for="address">Your address:</label>
+        </div>
+      </div>
+    </div> -->
+    <input id="submit" onclick="window.open('./confirm.html', '_blank');"
+    type="submit" value="Submit">
+    
+  </div> <!--Container-->
+
+
+    
+      </form>
+
+      
+      
+    
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
