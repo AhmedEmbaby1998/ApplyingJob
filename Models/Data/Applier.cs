@@ -19,7 +19,7 @@ namespace JobApplying.Models
         public string City { set; get; }
         public string ZipCode { set; get; }
         public double ExpectedSalary { set; get; }
-        public double MicrosoftOfficeGrade { set; get; }
+        public string MicrosoftOfficeGrade { set; get; }
         public double EnglishGrade { set; get; }
         public string Image { set; get; }
         public string GraduatingFaculty { set; get; }
@@ -28,7 +28,7 @@ namespace JobApplying.Models
         public int PositionId { set; get; }
         public DateTime ApplyingDateTime { set; get; }
         public bool IsSeen { set; get; }
-        public Position Position { set; get; }
+        public string Position { set; get; }
         public IList<Experience> Experiences { set; get; }
         public IList<PreviousWork>PreviousWorks { set; get; }
     }

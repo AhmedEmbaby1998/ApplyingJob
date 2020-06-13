@@ -26,10 +26,8 @@ namespace JobApplying.Models.FileUploading
         public string GraduatingFaculty { set; get; }
         public int GraduatingYear { set; get; }
         public int GraduatingGrade { set; get; }
-        public int PositionId { set; get; }
         public DateTime ApplyingDateTime { set; get; }
         public bool IsSeen { set; get; }
-        public Position Position { set; get; }
         public IList<Experience> Experiences { set; get; }
         public IList<PreviousWork>PreviousWorks { set; get; }
     }

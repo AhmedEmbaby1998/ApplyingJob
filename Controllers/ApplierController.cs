@@ -15,12 +15,12 @@ namespace JobApplying.Controllers
         {
             _repo = repo;
         }
+        [Route("Apply")]
         public IActionResult AddApplier()
         {
             return View();
         }
-
-      /**  [HttpPost]
+/**
         public Task<IActionResult> AddApplier(Applier applier)
         {
             var validation = new ValidateApplier(new List<IValidate<Applier>>()

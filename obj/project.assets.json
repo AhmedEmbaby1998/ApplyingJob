@@ -443,6 +443,15 @@
           }
         }
       },
+      "RazorEngine/4.5.1-alpha001": {
+        "type": "package",
+        "compile": {
+          "lib/net451/RazorEngine.dll": {}
+        },
+        "runtime": {
+          "lib/net451/RazorEngine.dll": {}
+        }
+      },
       "runtime.native.System/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -2083,6 +2092,20 @@
         "runtimes/win/lib/netstandard2.0/Microsoft.Win32.Registry.dll",
         "useSharedDesignerContext.txt",
         "version.txt"
+      ]
+    },
+    "RazorEngine/4.5.1-alpha001": {
+      "sha512": "bmJbSsckHuw1R2aRQUXL/x9pwojLCfTOKUGYfsfhUn5RVZaCaTFfP7P1DOU0fObakgoVBFlnF5tkGOLexZpU6w==",
+      "type": "package",
+      "path": "razorengine/4.5.1-alpha001",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "lib/net451/RazorEngine.dll",
+        "lib/net451/RazorEngine.xml",
+        "razorengine.4.5.1-alpha001.nupkg.sha512",
+        "razorengine.nuspec"
       ]
     },
     "runtime.native.System/4.3.0": {
@@ -5237,7 +5260,8 @@
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 3.1.5",
       "Microsoft.EntityFrameworkCore.SqlServer >= 3.1.5",
       "Microsoft.EntityFrameworkCore.Tools >= 3.1.5",
-      "Microsoft.Extensions.Logging.Console >= 3.1.5"
+      "Microsoft.Extensions.Logging.Console >= 3.1.5",
+      "RazorEngine >= 4.5.1-alpha001"
     ]
   },
   "packageFolders": {
@@ -5292,6 +5316,10 @@
           "Microsoft.Extensions.Logging.Console": {
             "target": "Package",
             "version": "[3.1.5, )"
+          },
+          "RazorEngine": {
+            "target": "Package",
+            "version": "[4.5.1-alpha001, )"
           }
         },
         "imports": [
@@ -5303,17 +5331,20 @@
           "net48"
         ],
         "assetTargetFallback": true,
-        "warn": true,
-        "frameworkReferences": {
-          "Microsoft.AspNetCore.App": {
-            "privateAssets": "none"
-          },
-          "Microsoft.NETCore.App": {
-            "privateAssets": "all"
-          }
-        },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+        "warn": true
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'RazorEngine 4.5.1-alpha001' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "libraryId": "RazorEngine",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
 }

@@ -18,7 +18,6 @@ namespace JobApplying.Models.Repositories
         public Applier GetApplier(int id)
         {
             return _context.Appliers.Where(applier => applier.Id == id)
-                .Include(applier => applier.Position)
                 .Include(applier => applier.Experiences)
                 .Include(applier => applier.PreviousWorks)
                 .FirstOrDefault();
