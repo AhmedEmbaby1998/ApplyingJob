@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" 
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" 
+    crossorigin="anonymous">
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* color1: #721b65 
+color2: #b80d57 color3: #f8615a yeollow: #ffd868*/
+body, html {
+    font-family: "Lato";
+    background: rgb(126,23,111);
+background: linear-gradient(274deg, rgba(126,23,111,1) 0%,
+ rgba(189,74,172,1) 80%);
+}
+
+p {
+    font-size: 17px;
+}
+
+.resume {
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 25px;
+    margin-top: 50px;
+}
+
+.contact {
+    background-color: #ffd868;
+    text-align: center;
+    padding: 10px;
+    color: #000;
+    border-radius: 10px;
+    height: 100%;
+
+}
+
+.personal-img img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-top: 40px;
+}
+
+.contact p {
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+/* Education====================== */
+
+.education {
+    background-color: #b80d57;
+    padding: 12px;
+    border-radius: 10px;
+    color: #fff;
+}
+
+.education ul {
+    list-style-type: none;
+}
+
+.skills {
+    background-color: #f8615a;
+    border-radius: 10px;
+    margin-top: 12px;
+    padding: 10px;
+    color: #fff;
+}
+
+.skills ul {
+    list-style: none;
+}
+
+.salary {
+    background-color: #1a1402;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+    width: 100%;
+    margin-top: 12px;
+}
+
+@media screen and (max-width: 500px){
+    .education {
+        margin-top: 12px;
+    }
+}
+    </style>
+    <title> resume </title>
+</head>
+<body>
+
+    <div class="container">
+        <div class="resume">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="contact">
+                        <div class="personal-img">
+                            <img src="./images/photo.jpg" alt="personal image">
+                        </div>
+                        <h2>Muhammad Salem</h2>
+                        <p>software engineer</p>
+                        <img style="width: 32px; height: 32px;" src="images/gmail-48.png" alt="gmail icon"> 
+                        <p style="display: inline-block;">mhmedsalem10@gmail.com</p> <br />
+                        <img style="width: 32px; height: 32px;" src="images/phone.png" alt="">
+                        <p style="display: inline-block;">
+                            <a href="tel:+20-012-015-88646">+20 (012) 015-886-46</a>
+                        </p><br />
+                        <img src="images/location-32.png" alt=""> <p style="display: inline-block;">Salah Salem .st, Tahta, Sohag.</p>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="education">
+                        <h2>Education</h2>
+                        <ul>
+                            <li>Faculty of science, Sohag univrsity - <p>2020</p></li>
+                            <li>GPA: Very Good</li>
+                        </ul>
+                            <h2>Work Experience</h2>
+                            <p>i have workd in Facebook and left the work as the salary was very low</p>
+                    </div>
+
+                    <div class="skills">
+                        <h2>skills</h2>
+                        <ul>
+                            <li>English: <b>64%</b></li>
+                            <li>Microsoft: <b>intermediate</b></li>
+                        </ul>
+                    </div>
+                    <div class="salary">
+                        <h4 style="color: chartreuse;">GENERAL INFO </h4>
+                        <p>age: 30 years</p>
+                        <p>Expected salary: <b>5000 LE</b></p>
+                    </div>
+                   
+                </div>
+                
+
+            </div>
+
+
+        </div>
+    </div>
+
+    
+    
+</body>
+</html>
