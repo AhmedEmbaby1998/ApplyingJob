@@ -6,6 +6,7 @@ using JobApplying.Models.FileUploading;
 using JobApplying.Models.Repositories;
 using JobApplying.Models.Validators;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace JobApplying.Controllers
@@ -14,11 +15,13 @@ namespace JobApplying.Controllers
     {
         private IApplierRepo<PartialApplier> _repo;
         private IWebHostEnvironment _environment;
+        private SignInManager<IdentityUser> _signInManager;
 
-        public ApplierController(IApplierRepo<PartialApplier> repo,IWebHostEnvironment environment)
+        public ApplierController(IApplierRepo<PartialApplier> repo,SignInManager<IdentityUser> signInManager,IWebHostEnvironment environment)
         {
             _repo = repo;
             _environment = environment;
+            _signInManager = signInManager;
         }
         [Route("Apply")]
         [HttpGet]
@@ -82,6 +85,23 @@ namespace JobApplying.Controllers
         {
             return View();
         }
+
+        [HttpGet]
+        public IActionResult Appliers()
+        {
+            return View(_repo.GetAllAppliers());
+        }
+
+        public IActionResult Applier(int id)
+        {
+            return View(_repo.GetApplier(id));
+        }
+
+        public IActionResult Login()
+        {
+            _signInManager.PasswordSignInAsync()
+        }
+
 
      
     }
