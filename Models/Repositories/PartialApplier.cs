@@ -1,4 +1,6 @@
-﻿namespace JobApplying.Models.Repositories
+﻿using System;
+
+namespace JobApplying.Models.Repositories
 {
     public class PartialApplier
     {
@@ -9,5 +11,6 @@
         public string Position { set; get; }
         public string Phone { set; get; }
         public bool IsSeen { set; get;}
+        public DateTime ApplyingDateTime { set; get; }
     }
 }

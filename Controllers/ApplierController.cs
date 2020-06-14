@@ -5,6 +5,7 @@ using JobApplying.Models;
 using JobApplying.Models.FileUploading;
 using JobApplying.Models.Repositories;
 using JobApplying.Models.Validators;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -49,7 +50,7 @@ namespace JobApplying.Controllers
                  EnglishGrade = applier.EnglishGrade,
                  ZipCode = applier.ZipCode,
                  ExpectedSalary = applier.ExpectedSalary,
-                 PreviousPlaces = Request.Form["PreviousPlaces"],
+                 PreviousPlaces = applier.PreviousPlaces,
                  GraduatingFaculty = applier.GraduatingFaculty,
                  ApplyingDateTime = DateTime.Now,
                  GraduatingGrade = applier.GraduatingGrade,
@@ -82,31 +83,44 @@ namespace JobApplying.Controllers
 
             return RedirectToAction("AddApplier");
         }
-
+        
         public IActionResult SuccessActionResult()
         {
             return View();
         }
 
         [HttpGet]
+       // [Authorize]
         [Microsoft.AspNetCore.Mvc.Route("Appliers")]
         public IActionResult Appliers()
         {
             return View(_repo.GetAllAppliers());
         }
-/**
+
         public IActionResult Applier(int id)
         {
             return View(_repo.GetApplier(id));
         }
 
+        [HttpGet]
+        [Microsoft.AspNetCore.Mvc.Route("Login")]
         public IActionResult Login()
         {
-            _signInManager.PasswordSignInAsync()
+            return View();
         }
-        */
+
+        [HttpPost]
+        public async Task<IActionResult> Login(LoginViewModel loginViewModel)
+        {
+            var result =
+                await _signInManager.PasswordSignInAsync(loginViewModel.Email, loginViewModel.Password, true, false);
+            if (result.Succeeded) 
+                return RedirectToAction("Appliers");
+            return RedirectToAction("Login");
+
+        }
 
 
-     
+
     }
 }

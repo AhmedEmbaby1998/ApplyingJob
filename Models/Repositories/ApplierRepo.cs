@@ -17,23 +17,29 @@ namespace JobApplying.Models.Repositories
         }
         public Applier GetApplier(int id)
         {
-            return _context.Appliers
+            var app = _context.Appliers
                 .FirstOrDefault(applier => applier.Id == id);
+            if (app == null) return null;
+            app.IsSeen = true;
+            _context.SaveChanges();
+            return app;
+
         }
 
         public List<PartialApplier> GetAllAppliers()
         {
             return _context.Appliers
                 .AsEnumerable().Select(applier => new PartialApplier
-            {
-                Name = applier.Name,
-                Id = applier.Id,
-                Age =DateTime.Now.Year-applier.BirthDate.Year,
-                IsSeen = applier.IsSeen,
-                Position = applier.Phone,
-                Phone = applier.Phone,
-                ExpectedSalary = applier.ExpectedSalary,
-            }).ToList();
+                {
+                    Name = applier.Name,
+                    Id = applier.Id,
+                    Age = DateTime.Now.Year - applier.BirthDate.Year,
+                    IsSeen = applier.IsSeen,
+                    Position = applier.Position,
+                    Phone = applier.Phone,
+                    ExpectedSalary = applier.ExpectedSalary,
+                    ApplyingDateTime = applier.ApplyingDateTime
+                }).OrderBy(applier => applier.IsSeen).ThenByDescending(applier => applier.ApplyingDateTime).ToList();
         }
 
         public async Task<bool> AddApplier(Applier applier)
@@ -41,5 +47,7 @@ namespace JobApplying.Models.Repositories
             await _context.Appliers.AddAsync(applier);
             return await _context.SaveChangesAsync() > 0;
         }
+
+     
     }
 }

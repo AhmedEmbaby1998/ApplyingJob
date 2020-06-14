@@ -47,8 +47,8 @@ body, html {
   .container {
     padding: 10px;
     background-color: white;
-    margin-top: 30px;
-    margin-bottom: 35px;
+    width: 85%;
+    margin: 20px auto;
     border-radius: 6px;
   }
 
@@ -367,6 +367,28 @@ input[type="submit"] {
   color: #444;
   margin-left: calc(50% - 100px);
 }
+
+#submit {
+background-color: #1a8002;
+border-radius: 15px;
+border: 2px solid transparent;
+cursor: pointer;
+color: #f2f2f2;
+}
+
+#submit:hover {
+background-color: #fff;
+color: #1a8002;
+border: 2px solid #1a8002;
+}
+
+.h2-form {
+font-family: "Lato", Georgia, 'Times New Roman', serif;
+font-size: 36px;
+text-align: center;
+color: #f2f2f2;
+padding-top: 8px;
+}
     
     </style>
     <title>ElMotaheda Pharmacy</title>
@@ -376,7 +398,7 @@ input[type="submit"] {
   <div class="head">
     <img src="Images/104009461_4214128105294765_5377036643844753484_n.png" alt="Logo">
   </div>
-  <h2 style="text-align: center; color: #000; margin-top: 16px; font-size: 36px;">Apply as employee</h2>
+  <h2 class="h2-form" >Apply as employee</h2>
 
     <form enctype="multipart/form-data" asp-action="AddAnApplier" asp-controller="Applier" method="post">
   

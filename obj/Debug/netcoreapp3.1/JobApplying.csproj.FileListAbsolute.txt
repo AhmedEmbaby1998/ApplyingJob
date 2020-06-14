@@ -79,3 +79,5 @@ C:\Users\Mr\RiderProjects\JobApplying\JobApplying\bin\Debug\netcoreapp3.1\RazorE
 C:\Users\Mr\RiderProjects\JobApplying\JobApplying\obj\Debug\netcoreapp3.1\Razor\Views\Applier\index.cshtml.g.cs
 C:\Users\Mr\RiderProjects\JobApplying\JobApplying\obj\Debug\netcoreapp3.1\Razor\Views\Applier\SuccessActionResult.cshtml.g.cs
 C:\Users\Mr\RiderProjects\JobApplying\JobApplying\obj\Debug\netcoreapp3.1\Razor\Views\Applier\Appliers.cshtml.g.cs
+C:\Users\Mr\RiderProjects\JobApplying\JobApplying\obj\Debug\netcoreapp3.1\Razor\Views\Applier\Login.cshtml.g.cs
+C:\Users\Mr\RiderProjects\JobApplying\JobApplying\obj\Debug\netcoreapp3.1\Razor\Views\Applier\Applier.cshtml.g.cs
