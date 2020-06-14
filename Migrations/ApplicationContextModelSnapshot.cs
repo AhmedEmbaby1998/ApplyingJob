@@ -44,14 +44,14 @@ namespace JobApplying.Migrations
                     b.Property<double>("ExpectedSalary")
                         .HasColumnType("float");
 
-                    b.Property<string>("Government")
+                    b.Property<string>("Experiences")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("GraduatingFaculty")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("GraduatingGrade")
-                        .HasColumnType("int");
+                    b.Property<string>("GraduatingGrade")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("GraduatingYear")
                         .HasColumnType("int");
@@ -62,8 +62,8 @@ namespace JobApplying.Migrations
                     b.Property<bool>("IsSeen")
                         .HasColumnType("bit");
 
-                    b.Property<double>("MicrosoftOfficeGrade")
-                        .HasColumnType("float");
+                    b.Property<string>("MicrosoftOfficeGrade")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
@@ -71,102 +71,18 @@ namespace JobApplying.Migrations
                     b.Property<string>("Phone")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("PositionId")
-                        .HasColumnType("int");
+                    b.Property<string>("Position")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PreviousPlaces")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ZipCode")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("PositionId");
-
                     b.ToTable("Appliers");
-                });
-
-            modelBuilder.Entity("JobApplying.Models.Experience", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("ApplierId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("ExperienceItem")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ApplierId");
-
-                    b.ToTable("Experiences");
-                });
-
-            modelBuilder.Entity("JobApplying.Models.Position", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<bool>("IsAvailable")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Pos")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Positions");
-                });
-
-            modelBuilder.Entity("JobApplying.Models.PreviousWork", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("ApplierId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("PlaceAndLefReason")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ApplierId");
-
-                    b.ToTable("PreviousWorks");
-                });
-
-            modelBuilder.Entity("JobApplying.Models.Applier", b =>
-                {
-                    b.HasOne("JobApplying.Models.Position", "Position")
-                        .WithMany("Appliers")
-                        .HasForeignKey("PositionId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("JobApplying.Models.Experience", b =>
-                {
-                    b.HasOne("JobApplying.Models.Applier", "Applier")
-                        .WithMany("Experiences")
-                        .HasForeignKey("ApplierId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("JobApplying.Models.PreviousWork", b =>
-                {
-                    b.HasOne("JobApplying.Models.Applier", "Applier")
-                        .WithMany("PreviousWorks")
-                        .HasForeignKey("ApplierId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+﻿@model ApplierViewModel
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -378,20 +378,21 @@ input[type="submit"] {
   </div>
   <h2 style="text-align: center; color: #000; margin-top: 16px; font-size: 36px;">Apply as employee</h2>
 
-    <form action="/action_page.php">
+    <form enctype="multipart/form-data" asp-action="AddAnApplier" asp-controller="Applier" method="post">
+  
         <div class="container">
       
          <div class="row">
              <div class="column">
               <div class="input-field">
-                <input type="text" id="name" required />
-                <label for="name">Your name:</label>
+                <input type="text" id="name" asp-for="Name" required />
+                <label for="name" asp-for="Name">Your name:</label>
               </div>
              </div>
              <div class="column">
               <div class="input-field">
-                <input type="email" id="email" required />
-                <label for="email">Your email:</label>
+                <input asp-for="Email" type="email" id="email" required />
+                <label asp-for="Email" for="email">Your email:</label>
               </div>
              </div>
          </div>
@@ -399,15 +400,14 @@ input[type="submit"] {
          <div class="row">
              <div class="column">
                <div class="input-field">
-                <label class="date-label" for="dateofbirth">Date Of Birth</label>
-                <input class="date-input" type="date" name="dateofbirth" id="dateofbirth">
+                <label class="date-label" asp-for="BirthDate"   for="dateofbirth">Date Of Birth</label>
+                <input class="date-input" asp-for="BirthDate" type="date"  id="dateofbirth">
                </div>
              </div>
              <div class="column">
               <div class="input-field">
-                <input type="tel" id="phone" name="phone" 
-                placeholder="012-711-201-06" pattern="01-[0-9]{1}-[0-9]{3}-[0-9]{3}-[0-9]{2}" required>
-                <label for="phone">Enter a phone number:</label>
+                <input type="tel" id="phone" name="phone" asp-for="Phone" required>
+                <label asp-for="Phone" for="phone">Enter a phone number:</label>
               </div>
             </div>
          </div>
@@ -416,7 +416,7 @@ input[type="submit"] {
           <div class="column">
             <div class="input-field">
               <div class="custom-select">
-                <select id="jobs">
+                <select asp-for="Position" id="jobs">
                   <option value="firts">Choose your job</option>
                   <option value="chemist">Chemist</option>
                   <option value="warehouse-manager">Warehouse Manager</option>
@@ -430,8 +430,8 @@ input[type="submit"] {
           </div>
           <div class="column">
            <div class="input-field">
-              <input type="text" id="work-experience" required />
-              <label for="work-experience">Your work experience:</label>
+              <input asp-for="Experiences" type="text" id="work-experience" required />
+              <label asp-for="Experiences" for="work-experience">Your work experience:</label>
            </div>
          </div>
       </div>
@@ -439,14 +439,14 @@ input[type="submit"] {
       <div class="row">
         <div class="column">
           <div class="input-field">
-            <input type="text" id="faculty" required />
-            <label for="faculty">Faculty:</label>
+            <input asp-for="GraduatingFaculty" type="text" id="faculty" required />
+            <label asp-for="GraduatingFaculty" for="faculty">Faculty:</label>
           </div>
         </div>
         <div class="column">
          <div class="input-field">
-          <input type="text" id="grade" required />
-          <label for="grade">Grade:</label>
+          <input asp-for="GraduatingGrade" type="text" id="grade" required />
+          <label asp-for="GraduatingGrade" for="grade">Grade:</label>
          </div>
        </div>
     </div>
@@ -454,15 +454,15 @@ input[type="submit"] {
     <div class="row">
       <div class="column">
         <div class="input-field">
-          <label class="date-label" for="graduation-year">Graduation year</label>
-          <input id="graduation-year" type="number" min="2010" max="2019" step="1" value="2016" />
+          <label asp-for="GraduatingYear" class="date-label" for="graduation-year">Graduation year</label>
+          <input asp-for="GraduatingYear" id="graduation-year" type="number" min="1970" max="2019" step="1" value="2016" />
 
         </div>
       </div>
       <div class="column">
        <div class="input-field">
-        <input type="number" id="salary" required />
-        <label for="salary">Expected salary:</label>
+        <input asp-for="ExpectedSalary" type="number" id="salary" required />
+        <label asp-for="ExpectedSalary" for="salary">Expected salary:</label>
        </div>
      </div>
   </div>
@@ -471,7 +471,7 @@ input[type="submit"] {
     <div class="column">
       <div class="input-field">
         <span> English level:</span>
-        <input type="range" value="0">
+        <input asp-for="EnglishGrade" type="range" value="0">
         <div id="h4-container"><div id="h4-subcontainer"><h4>0<span></span></h4></div></div>
 
       </div>
@@ -479,7 +479,7 @@ input[type="submit"] {
     <div class="column">
      <div class="input-field">
       <span> Microsoft Office level:</span>    
-        <select name="office" id="office">
+        <select id="office" asp-for="MicrosoftOfficeGrade">
           <option value="beginner">beginner</option>
           <option value="intermediate" >intermediate</option>
           <option value="advanced">advanced</option>
@@ -491,13 +491,13 @@ input[type="submit"] {
   <div class="row">
     <div class="column">
       <div class="input-field">
-        <textarea id="work-places" name="work-places" placeholder="Write places you have workd in and why you left?"></textarea>
+        <textarea asp-for="PreviousPlaces" id="work-places"  placeholder="Write places you have workd in and why you left?"></textarea>
       </div>
       </div>
       <div class="column">
         <div class="input-field">
           <div class="file-upload-wrapper" data-text="upload personal image!">
-            <input name="file-upload-field" type="file" class="file-upload-field" value="">
+            <input asp-for="Image"  type="file" class="file-upload-field" >
           </div>
         </div>
       </div>
@@ -506,13 +506,13 @@ input[type="submit"] {
     <div class="row">
       <div class="column">
         <div class="input-field">
-          <input type="text" id="city" />
+          <input asp-for="City" type="text" id="city" />
           <label for="city">Your city:</label>
         </div>
       </div>
       <div class="column">
         <div class="input-field">
-          <input type="text" id="address" />
+          <input asp-for="ZipCode" type="text" id="address" />
           <label for="address">Your address:</label>
         </div>
       </div>

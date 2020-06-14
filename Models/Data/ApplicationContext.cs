@@ -10,7 +10,5 @@ namespace JobApplying.Models
             
         }
         public DbSet<Applier> Appliers { set; get; }
-        public DbSet<Experience> Experiences { set; get; }
-        public DbSet<PreviousWork> PreviousWorks { set; get; }
     }
 }

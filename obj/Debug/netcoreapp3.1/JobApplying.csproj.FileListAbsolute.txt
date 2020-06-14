@@ -76,3 +76,5 @@ C:\Users\Mr\RiderProjects\JobApplying\JobApplying\bin\Debug\netcoreapp3.1\Micros
 C:\Users\Mr\RiderProjects\JobApplying\JobApplying\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
 C:\Users\Mr\RiderProjects\JobApplying\JobApplying\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
 C:\Users\Mr\RiderProjects\JobApplying\JobApplying\bin\Debug\netcoreapp3.1\RazorEngine.dll
+C:\Users\Mr\RiderProjects\JobApplying\JobApplying\obj\Debug\netcoreapp3.1\Razor\Views\Applier\index.cshtml.g.cs
+C:\Users\Mr\RiderProjects\JobApplying\JobApplying\obj\Debug\netcoreapp3.1\Razor\Views\Applier\SuccessActionResult.cshtml.g.cs
