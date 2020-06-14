@@ -30,7 +30,9 @@ namespace JobApplying.Models.Repositories
                 Id = applier.Id,
                 Age =DateTime.Now.Year-applier.BirthDate.Year,
                 IsSeen = applier.IsSeen,
-                ExpectedSalary = applier.ExpectedSalary
+                Position = applier.Phone,
+                Phone = applier.Phone,
+                ExpectedSalary = applier.ExpectedSalary,
             }).ToList();
         }
 

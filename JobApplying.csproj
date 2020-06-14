@@ -12,5 +12,11 @@
       <PackageReference Include="RazorEngine" Version="4.5.1-alpha001" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Views\images" />
+      <Folder Include="Views\javascript" />
+      <Folder Include="Views\styles" />
+    </ItemGroup>
+
 
 </Project>

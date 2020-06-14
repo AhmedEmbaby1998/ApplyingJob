@@ -1,0 +1,50 @@
+﻿@using JobApplying.Models.Repositories
+@model System.Collections.Generic.List<JobApplying.Models.Repositories.PartialApplier>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/data.css">
+    <title>Table Data</title>
+</head>
+<body>
+<div class="container">
+    <h1>Employees Data</h1>
+    <table class="rwd-table">
+        <tbody>
+        <tr>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Expected salary</th>
+            <th>Phone</th>
+            <th>checked</th>
+        </tr>
+       @{
+           foreach (PartialApplier applier in Model)
+           {
+               <tr>
+                   <td data-th="Name">
+                       @applier.Name
+                   </td>
+                   <td data-th="Position">
+                       @applier.Position
+                   </td>
+                   <td data-th="Expected salary">
+                       @applier.ExpectedSalary
+                   </td>
+                   <td data-th="phone">
+                       @applier.Phone
+                   </td>
+                   <td data-th="checked">
+                       @applier.IsSeen
+                   </td>
+               </tr>
+           }
+       }
+
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
