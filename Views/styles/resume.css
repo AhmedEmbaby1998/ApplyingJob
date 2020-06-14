@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* color1: #721b65 
+color2: #b80d57 color3: #f8615a yeollow: #ffd868*/
+body, html {
+    font-family: "Lato", "Arial";
+    background: rgb(126,23,111);
+background: linear-gradient(274deg, rgba(126,23,111,1) 0%,
+ rgba(189,74,172,1) 80%);
+}
+
+p {
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.resume {
+    background-color: #FFFFFF;
+    padding: 15px;
+    border-radius: 20px;
+    margin-top: 50px;
+}
+
+.contact {
+    background-color: #ffd868;
+    text-align: center;
+    padding: 10px;
+    color: #000;
+    border-radius: 10px;
+    height: 100%;
+
+}
+
+.contact a {
+    text-decoration: none;
+    font-size: 17px;
+    color: rgb(27, 0, 70);
+    font-weight: 500;
+}
+
+.contact a:hover {
+    color: #38a01f;
+    border-bottom: 1px solid #f00;
+}
+.personal-img img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 20px;
+}
+
+.contact p {
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+/* Education====================== */
+
+.education {
+    background-color: #b80d57;
+    padding: 12px;
+    border-radius: 10px;
+    color: rgb(243, 243, 243);
+
+}
+
+.education ul {
+    list-style-type: none;
+}
+
+.skills {
+    background-color: #f8615a;
+    border-radius: 10px;
+    margin-top: 12px;
+    padding: 10px;
+    color: #fff;
+}
+
+
+
+.info {
+    background-color: #1a1402;
+    padding: 10px;
+    border-radius: 10px;
+    color: rgb(243, 243, 243);
+    width: 100%;
+    margin-top: 12px;
+}
