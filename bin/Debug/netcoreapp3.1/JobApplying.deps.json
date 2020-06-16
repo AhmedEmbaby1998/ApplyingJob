@@ -28,6 +28,7 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.5",
           "Microsoft.EntityFrameworkCore.Tools": "3.1.5",
           "Microsoft.Extensions.Logging.Console": "3.1.5",
+          "RazorEngine": "4.5.1-alpha001",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "3.1.0.0",
@@ -735,6 +736,17 @@
         "dependencies": {
           "System.Security.AccessControl": "4.5.0",
           "System.Security.Principal.Windows": "4.5.0"
+        }
+      },
+      "RazorEngine/4.5.1-alpha001": {
+        "runtime": {
+          "lib/net451/RazorEngine.dll": {
+            "assemblyVersion": "4.5.1.0",
+            "fileVersion": "4.5.1.0"
+          }
+        },
+        "compile": {
+          "lib/net451/RazorEngine.dll": {}
         }
       },
       "runtime.native.System/4.3.0": {
@@ -3147,6 +3159,13 @@
       "sha512": "sha512-+FWlwd//+Tt56316p00hVePBCouXyEzT86Jb3+AuRotTND0IYn0OO3obs1gnQEs/txEnt+rF2JBGLItTG+Be6A==",
       "path": "microsoft.win32.registry/4.5.0",
       "hashPath": "microsoft.win32.registry.4.5.0.nupkg.sha512"
+    },
+    "RazorEngine/4.5.1-alpha001": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-bmJbSsckHuw1R2aRQUXL/x9pwojLCfTOKUGYfsfhUn5RVZaCaTFfP7P1DOU0fObakgoVBFlnF5tkGOLexZpU6w==",
+      "path": "razorengine/4.5.1-alpha001",
+      "hashPath": "razorengine.4.5.1-alpha001.nupkg.sha512"
     },
     "runtime.native.System/4.3.0": {
       "type": "package",

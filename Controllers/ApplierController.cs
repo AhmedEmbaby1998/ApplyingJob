@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing;
 
@@ -19,12 +20,14 @@ namespace JobApplying.Controllers
         private IApplierRepo<PartialApplier> _repo;
         private IWebHostEnvironment _environment;
         private SignInManager<IdentityUser> _signInManager;
+        private UserManager<IdentityUser> _userManager;
 
-        public ApplierController(IApplierRepo<PartialApplier> repo,SignInManager<IdentityUser> signInManager,IWebHostEnvironment environment)
+        public ApplierController(IApplierRepo<PartialApplier> repo,SignInManager<IdentityUser> signInManager,UserManager<IdentityUser>userManager,IWebHostEnvironment environment)
         {
             _repo = repo;
             _environment = environment;
             _signInManager = signInManager;
+            _userManager = userManager;
         }
         [Microsoft.AspNetCore.Mvc.Route("Apply")]
         [HttpGet]
@@ -90,13 +93,13 @@ namespace JobApplying.Controllers
         }
 
         [HttpGet]
-       // [Authorize]
+       [Authorize]
         [Microsoft.AspNetCore.Mvc.Route("Appliers")]
         public IActionResult Appliers()
         {
             return View(_repo.GetAllAppliers());
         }
-
+        [Authorize]
         public IActionResult Applier(int id)
         {
             return View(_repo.GetApplier(id));
@@ -104,23 +107,52 @@ namespace JobApplying.Controllers
 
         [HttpGet]
         [Microsoft.AspNetCore.Mvc.Route("Login")]
+        [Microsoft.AspNetCore.Mvc.Route("Admin")]
+
         public IActionResult Login()
         {
+            if (User.Identity.IsAuthenticated)
+            {
+                RedirectToAction("Appliers");
+            }
             return View();
         }
 
         [HttpPost]
-        public async Task<IActionResult> Login(LoginViewModel loginViewModel)
+        public async Task<IActionResult> Logins(LoginViewModel loginViewModel,string returnUrl)
         {
+            
             var result =
                 await _signInManager.PasswordSignInAsync(loginViewModel.Email, loginViewModel.Password, true, false);
-            if (result.Succeeded) 
+            if (result.Succeeded)
+            {
+                if (!String.IsNullOrEmpty(returnUrl)&&Url.IsLocalUrl(returnUrl))
+                {
+                    return Redirect(returnUrl);
+                }
                 return RedirectToAction("Appliers");
+            }
+
             return RedirectToAction("Login");
 
         }
+        /**
+        [Microsoft.AspNetCore.Mvc.Route("signin")]
+        public async Task<IActionResult> SignIn()
+        {
+            var user=new IdentityUser{UserName ="admin333" };
+            var result = await _userManager.CreateAsync(user, "333");
+            if (result.Succeeded)
+            {
+                await _signInManager.SignInAsync(user, false);
+                RedirectToAction("Appliers");
+            }
 
+            var x = 3;
+            return RedirectToAction("AddApplier");
+        }
 
+**/
 
     }
 }

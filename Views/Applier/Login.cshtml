@@ -282,12 +282,12 @@
       
           <!-- Icon -->
           <div class="fadeIn first">
-            <img src="imgs/logo-2.jpg" id="icon" alt="User Icon" />
+            <img src="assets/etihad.png" id="icon" alt="User Icon" />
           </div>
       
           <!-- Login Form -->
-          <form asp-action="Login" asp-controller="Applier" method="post">
-            <input type="text" id="login" class="fadeIn second" asp-for="Email" placeholder="Email"><br/>
+          <form asp-action="Logins" asp-controller="Applier" method="post">
+            <input type="text" id="login" class="fadeIn second" asp-for="Email" placeholder="User Name"><br/>
             <input type="password" id="password" class="fadeIn third" asp-for="Password"  placeholder="password"><br/>
             <input type="submit" class="fadeIn fourth" value="Log In">
           </form>

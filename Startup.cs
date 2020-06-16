@@ -37,7 +37,16 @@ namespace JobApplying
             services.AddDbContextPool<ApplicationContext>(
                 builder => builder.UseSqlServer(Configuration.GetConnectionString("AppConnection"))
                     .UseLoggerFactory(ConsoleLoggetFactory)
-            ); 
+            );
+            services.Configure<IdentityOptions>(options =>
+            {
+                options.Password.RequireDigit = false;
+                options.Password.RequiredLength = 2;
+                options.Password.RequireLowercase = false;
+                options.Password.RequireUppercase = false;
+                options.Password.RequiredUniqueChars = 1;
+                options.Password.RequireNonAlphanumeric = false;
+            });
             services.AddControllersWithViews();
             services.AddIdentity<IdentityUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationContext>();
