@@ -7,10 +7,10 @@
  */
 body, html {
     height: auto;
-    font-family: "Lato", Georgia, 'Times New Roman', serif;
-    background: linear-gradient(to top, hsl(192, 100%, 50%, 0.7), rgba(135, 160, 252, 0.6)) , 
+    font-family: 'Open Sans', sans-serif;
+    background: linear-gradient(to top, rgba(192, 100%, 50%, 0.7), rgba(135, 160, 252, 0.6)) , 
     url('../imgs/bg.jpg') no-repeat;
-  background-size: cover;
+    background-size: cover;
 
 }
 
